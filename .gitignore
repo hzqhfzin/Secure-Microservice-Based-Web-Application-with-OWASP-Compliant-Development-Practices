@@ -1,0 +1,84 @@
+# ==========================================
+# 1. DJANGO & PYTHON CORE
+# ==========================================
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.cfg
+*.core
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Prevent the local development database from being leaked
+db.sqlite3
+db.sqlite3-journal
+
+# Local Media and Static Assets (User Uploads)
+# We completely block the contents of the uploads folder so test webshells or heavy images do not leak to GitHub
+secure_app_project/uploads/*
+
+# Exception: Allow Git to track the folder structure using a hidden .gitkeep file
+!secure_app_project/uploads/.gitkeep
+
+staticfiles/
+media/
+
+# ==========================================
+# 2. VIRTUAL ENVIRONMENTS
+# ==========================================
+venv/
+.venv/
+env/
+.env
+ENV/
+env.bak/
+venv.bak/
+
+# ==========================================
+# 3. SECURITY, SECRETS & EXPLOIT ARTIFACTS
+# ==========================================
+# Block environmental variables, credentials, and API access tokens
+.env.*
+secrets.json
+*.pem
+*.key
+*.pub
+*.crt
+*.pfx
+
+# Explicitly exclude active malicious test code (Web Shells) from being pushed to public repositories
+*.html.bak
+shell.html
+shell_qVdk4j3.html
+
+# ==========================================
+# 4. OPERATING SYSTEMS & IDE TOOLS
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Ehthumbs.db
+Desktop.ini
+
+# JetBrains IDEs (PyCharm, WebStorm, etc.)
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# ==========================================
+# 5. HARDWARE / IoT EMBEDDED LOGS
+# ==========================================
+# Ignore raw firmware compilation and microchip logs (e.g., ESP32/Arduino) if generated locally
+*.hex
+*.bin
+*.elf
+node_modules/
