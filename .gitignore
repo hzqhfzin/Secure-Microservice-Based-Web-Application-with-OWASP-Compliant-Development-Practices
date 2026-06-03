@@ -1,24 +1,15 @@
-# Security & Environment Secrets
-.env
-.env.production
-*.pem
-*.key
-*.secret
-
-# Framework Dependencies & Packages
-node_modules/
-vendor/
-.phpunit.result.cache
-
-# Language/Framework Cache & Logs
-*.log
-__pycache__/
+# Django environment
 *.pyc
-.phpunit.cache/
-.pypyhead/
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
 
-# IDE & OS Files
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
+# Mengelakkan web shell pengetesan daripada dimuat naik secara tidak sengaja
+# (Sangat bahaya kalau kod shell aktif dibiarkan di GitHub awam)
+secure_app_project/uploads/shell.html
+secure_app_project/uploads/shell_qVdk4j3.html
+
+# Persekitaran Maya (Virtual Environment)
+venv/
+.env
