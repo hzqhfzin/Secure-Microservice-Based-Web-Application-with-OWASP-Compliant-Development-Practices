@@ -7,10 +7,10 @@ The system serves as a resilient multi-module web platform featuring a hardened 
 ---
 
 ## 👥 Team Members & Roles
-* **Member 1 (Developer):** Secure Framework Setup, Authentication Flow, RBAC Database Logic, Core CRUD Module, and User Profile Interfaces.
-* **Member 2 (Security / QA):** SCA (Snyk), SAST (SonarQube), DAST/Active Penetration Testing (OWASP ZAP/Burp Suite), and Risk Prioritization.
-* **Member 3 (Mitigation & Hardening):** Code Hardening, Server-Side Input Validation, UUID File Upload Security, and Security Event Logging.
-* **Member 4 (DevSecOps & Documentation):** GitHub Team Repository Architecture, Environment Control, DFD & Trust Boundary Engineering, and Technical Reporting.
+* **Izaaz Muqriz (Developer):** Secure Framework Setup, Authentication Flow, RBAC Database Logic, Core CRUD Module, and User Profile Interfaces.
+* **Muhammad Firdaus bin Jaafar 52215125 (Security / QA):** SCA (Snyk), SAST (SonarQube), DAST/Active Penetration Testing (OWASP ZAP/Burp Suite), and Risk Prioritization.
+* **Muhamad Azim Mustaqim bin Azman 52215125 (Mitigation & Hardening):** Code Hardening, Server-Side Input Validation, UUID File Upload Security, and Security Event Logging.
+* **Muhammad Haziq Hafizin bin Abd Rashid 52215125933 (DevSecOps & Documentation):** GitHub Team Repository Architecture, Environment Control, DFD & Trust Boundary Engineering, and Technical Reporting.
 
 ---
 
