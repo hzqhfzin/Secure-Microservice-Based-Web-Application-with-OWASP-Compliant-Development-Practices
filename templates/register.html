@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9;">
+    <div style="max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2>Create Account</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <p>
+                <label>Username:</label><br>
+                <input type="text" name="username" required style="width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box;">
+            </p>
+            <p>
+                <label>Password:</label><br>
+                <input type="password" name="password" required style="width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box;">
+            </p>
+            <p>
+                <label>Account Role:</label><br>
+                <select name="role" style="width: 100%; padding: 8px; margin-top: 4px;">
+                    <option value="user">Normal User</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </p>
+            <button type="submit" style="background-color: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; width: 100%; margin-top: 10px;">Register</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9;">
+    <div style="max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2>User Profile Dashboard</h2>
+        <hr style="border: 0; border-top: 1px solid #ccc; margin-bottom: 20px;">
+        
+        <p><strong>Username:</strong> {{ target_user.username }}</p>
+        <p><strong>Account Role:</strong> {{ target_user.role }}</p>
+        <p><strong>User ID Reference:</strong> {{ target_user.id }}</p>
+        
+        <br>
+        <a href="/inventory/" style="color: blue; text-decoration: underline; font-size: 14px;">Go to Inventory</a>
+    </div>
+</body>
+</html>

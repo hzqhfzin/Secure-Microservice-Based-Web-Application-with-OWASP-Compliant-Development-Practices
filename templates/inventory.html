@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Item & Inventory Catalog</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9;">
+    <div style="max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Create New Inventory Log Entry</h2>
+            <a href="/logout/" style="background-color: #dc3545; color: white; padding: 6px 14px; border-radius: 4px; text-decoration: none; font-size: 14px;">Logout</a>
+        </div>
+        
+        <form method="GET" action="" style="margin-bottom: 20px; padding: 10px; background: #f0f4f8; border-radius: 4px;">
+            <label>Search Catalog:</label><br>
+            <input type="text" name="search" value="{{ search_query }}" style="width: 70%; padding: 6px; margin-top: 4px;">
+            <button type="submit" style="padding: 6px 12px;">Search</button>
+        </form>
+
+        {% if search_query %}
+            <p>Search results for: <strong>{{ search_query|safe }}</strong></p>
+        {% endif %}
+        <hr>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>
+                <label>Item Name:</label><br>
+                <input type="text" name="name" required style="width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box;">
+            </p>
+            <p>
+                <label>Quantity:</label><br>
+                <input type="number" name="quantity" required style="width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box;">
+            </p>
+            <p>
+                <label>Status:</label><br>
+                <input type="text" name="status" value="Available" style="width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box;">
+            </p>
+            <p>
+                <label>Insecure File Attachment Upload (RCE Target):</label><br>
+                <input type="file" name="attachment" style="margin-top: 8px;">
+            </p>
+            <br>
+            <button type="submit" style="background-color: #e1e1e1; color: black; border: 1px solid #adadad; padding: 6px 12px; border-radius: 3px; cursor: pointer;">Save Record</button>
+        </form>
+
+        <br>
+        <a href="/inventory/" style="color: blue; text-decoration: underline; font-size: 14px;">Back to List</a>
+
+        {% if items %}
+        <hr style="margin-top: 20px; border: 0; border-top: 1px solid #ccc;">
+        <h3>Current Items:</h3>
+        <ul>
+            {% for item in items %}
+            <li>
+                {{ item.item_name|safe }} ({{ item.quantity }}) - {{ item.status|safe }}
+                
+                <a href="/inventory/delete/{{ item.id }}/" style="color: red; margin-left: 10px; font-size: 12px;">[Delete]</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
