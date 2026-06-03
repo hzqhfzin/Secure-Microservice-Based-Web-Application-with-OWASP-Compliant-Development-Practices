@@ -1,0 +1,24 @@
+# Security & Environment Secrets
+.env
+.env.production
+*.pem
+*.key
+*.secret
+
+# Framework Dependencies & Packages
+node_modules/
+vendor/
+.phpunit.result.cache
+
+# Language/Framework Cache & Logs
+*.log
+__pycache__/
+*.pyc
+.phpunit.cache/
+.pypyhead/
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
